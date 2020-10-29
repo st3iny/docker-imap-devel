@@ -6,7 +6,7 @@ DEBUG_ADDRESS="debug@${MAILNAME}"
 DEBUG_PASS="debug"
 MAIL_LOCATION='/var/mail'
 POSTMASTER_ADDRESS="postmaster@${MAILNAME}"
-HOSTNAME=${HOSTNAME:=$(hostname -f)}
+HOSTNAME="$(hostname -f)"
 
 echo "Hostname: $HOSTNAME"
 
