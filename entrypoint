@@ -6,7 +6,7 @@ DEBUG_ADDRESS="debug@${MAILNAME}"
 DEBUG_PASS="debug"
 MAIL_LOCATION='/var/mail'
 POSTMASTER_ADDRESS="postmaster@${MAILNAME}"
-HOSTNAME="$(hostname -f)"
+HOSTNAME=${HOSTNAME:=$(hostname -f)}
 
 _add_line() {
     local check="$1"
