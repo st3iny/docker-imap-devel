@@ -18,6 +18,7 @@ RUN set -x; \
         dovecot-core \
         dovecot-imapd \
         dovecot-lmtpd \
+        dovecot-managesieved \
         rsyslog \
         iproute2 \
     && apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y \
