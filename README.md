@@ -28,6 +28,7 @@ Edit ```docker-compose.yml``` for set these environment variables:
 - MAILNAME: Mail domain (by default, `localdomain.test`)
 - MAIL_ADDRESS: Normal user mailbox email address (optional)
 - MAIL_PASS: Normal user mailbox password
+- MAIL_ACCOUNTS: A list of accounts to create `alice@domain.com,password bob@domain.com,password`
 
 ```
 docker-compose up

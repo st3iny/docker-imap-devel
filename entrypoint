@@ -117,6 +117,15 @@ if [ -n "$MAIL_ADDRESS" ]; then
     _add_line "$MAIL_ADDRESS" "/$MAIL_ADDRESS/ $MAIL_ADDRESS" /etc/postfix/virtual_regexp
 fi
 
+# Create user accounts
+if [ -n "$MAIL_ACCOUNTS" ]; then
+    for MAIL_ACCOUNT in ${MAIL_ACCOUNTS}; do
+        IFS=',' read account_login account_password <<< "${MAIL_ACCOUNT}"
+        _account_add "$account_login" "$account_password"
+        _add_line "$account_login" "/$account_login/ $account_login" /etc/postfix/virtual_regexp
+    done
+fi
+
 # Create debug account
 _account_add "$DEBUG_ADDRESS" "$DEBUG_PASS"
 
