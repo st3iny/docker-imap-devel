@@ -11,6 +11,7 @@ services:
     - "25:25"
     - "143:143"
     - "993:993"
+    - "4190:4190"
     environment:
     - MAILNAME=example.org
     - MAIL_ADDRESS=address@example.org
