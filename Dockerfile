@@ -32,6 +32,9 @@ RUN set -x; \
     && usermod -aG $MAIL_FS_USER postfix \
     && usermod -aG $MAIL_FS_USER dovecot \
 
+    # Disable STARTTLS
+    && sed -Ei 's/^smtpd_use_tls=yes/smtpd_use_tls=no/' /etc/postfix/main.cf \
+
     && echo "Installed: OK"
 
 ADD postfix /etc/postfix
